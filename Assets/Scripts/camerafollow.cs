@@ -16,11 +16,17 @@ public class camerafollow : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate () {
         if (init){
-            if(player.position.x > originpos.x){
-                Vector3 newpos = new Vector3(player.position.x, transform.position.y, transform.position.y);
-                transform.position = newpos;
+            if(player.position.x > originpos.x/2){
                 init= !init;
             }
+        } else{
+            Vector3 newpos = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            transform.position = newpos;
+        }
+
+        if (player.position.y > originpos.y/2){
+            Vector3 newpos = new Vector3(transform.position.x, player.position.y, transform.position.z);
+            transform.position = newpos;
         }
 	}
 }
