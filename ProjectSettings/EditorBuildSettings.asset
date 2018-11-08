@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Jooseung/Scene/Start.unity
+    guid: cd5ac8308e1258249aa5efe31d16f2f4
+  - enabled: 1
+    path: Assets/Jooseung/Scene/Main.unity
+    guid: b03916b4106cb3144b6435198a95aa51
   m_configObjects: {}
