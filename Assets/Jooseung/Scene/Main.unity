@@ -929,7 +929,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mission 1
+  m_Text: 
 --- !u!222 &202794172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1304,10 +1304,10 @@ RectTransform:
   m_Father: {fileID: 1433765155}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 830, y: 0}
+  m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &251356026
 MonoBehaviour:
@@ -3785,10 +3785,10 @@ RectTransform:
   m_Father: {fileID: 1453701636}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 560, y: -260}
+  m_SizeDelta: {x: 1120, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756388031
 MonoBehaviour:
@@ -4813,7 +4813,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.00024414062}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: -988, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &932866672
 MonoBehaviour:
@@ -6892,8 +6892,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000007892346}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00019222194}
+  m_SizeDelta: {x: 0, y: -454}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1453701637
 MonoBehaviour:
@@ -7054,7 +7054,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 0, y: 80}
+  m_SizeDelta: {x: 170, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483721493
 MonoBehaviour:
@@ -7596,6 +7596,17 @@ MonoBehaviour:
       - m_Target: {fileID: 232767073}
         m_MethodName: SetCurrentMission
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2125516120}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8711,7 +8722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2125516121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8828,6 +8839,7 @@ GameObject:
   - component: {fileID: 2133997545}
   - component: {fileID: 2133997547}
   - component: {fileID: 2133997546}
+  - component: {fileID: 2133997548}
   m_Layer: 5
   m_Name: Mission1
   m_TagString: Untagged
@@ -8858,10 +8870,10 @@ RectTransform:
   m_Father: {fileID: 1453701636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 560, y: -80}
+  m_SizeDelta: {x: 1120, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133997546
 MonoBehaviour:
@@ -8899,6 +8911,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133997544}
   m_CullTransparentMesh: 0
+--- !u!114 &2133997548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133997544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795e8f2ea9ff3ee43a75e8ea07783558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holding_mission: {fileID: 11400000, guid: 132554ec50e383a488cf0702d2756f41, type: 2}
+  missionImage: {fileID: 1339922257}
+  missionDescription: {fileID: 202794171}
+  missionName: {fileID: 1352606757}
 --- !u!1 &2138536362
 GameObject:
   m_ObjectHideFlags: 0

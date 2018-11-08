@@ -33,7 +33,8 @@ public class MissionManager : MonoBehaviour {
 
     public void SetCurrentMission()
     {
-        Debug.Log(EventSystem.current.currentSelectedGameObject.transform.parent.name);
+        Mission selectedMission = EventSystem.current.currentSelectedGameObject.transform.parent.GetComponent<MissionContainer>().holding_mission;
+        mission_controller.CurrentMission = selectedMission;
     }
 
 }
