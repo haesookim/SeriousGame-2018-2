@@ -68,12 +68,14 @@ public class heroController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.LeftAlt) && isGrounded())
         {
+            gameObject.GetComponent<Animator>().SetBool("jump", true);
             jump = true;
             rigid.AddForce(jumpforce, ForceMode2D.Impulse);
         }
 
         if (jump){
             if (isGrounded()){
+                gameObject.GetComponent<Animator>().SetBool("jump", false);
                 jump = false;
             }
         }
