@@ -93,29 +93,16 @@ public class heroController : MonoBehaviour {
     }
 
     void BasicAttack(){
-<<<<<<< HEAD
-        status.text = "Attacking";
-        if (attack_able)
-        {
-            Debug.Log("Boom");
-=======
         if (attack_able)
         {
             gameObject.GetComponent<Animator>().SetTrigger("attack");
->>>>>>> origin/CharacterController
             enemyCollider.GetComponentInParent<enemyController>().health -= damage;
         }
     }
 
 
-<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Contact");
-=======
-    private void OnTriggerEnter2D(Collider2D other)
-    {
->>>>>>> origin/CharacterController
         if (other.tag == "Enemy") {
             enemyCollider = other;
             attack_able = true;
