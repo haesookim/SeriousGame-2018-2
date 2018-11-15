@@ -129,6 +129,10 @@ public class heroController : MonoBehaviour {
         {
             hit = Physics2D.Raycast(transform.position + new Vector3(0, 1, 0), -transform.right, attackRange, layermask);
         }
+        if(hit.collider == null)
+        {
+            return;
+        }
         if (hit.collider.tag == "Enemy")
         {
             EnemyController enemy = hit.collider.GetComponent<EnemyController>();
