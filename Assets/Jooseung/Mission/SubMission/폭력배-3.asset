@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
+  m_Name: "\uD3ED\uB825\uBC30-3"
+  m_EditorClassIdentifier: 
+  submission_name: "\uC2DC\uBBFC\uACFC \uB300\uD654\uD558\uB77C"
+  submission_description: "\uD3ED\uB825\uBC30\uB97C \uBB34\uCC14\uB800\uB2E4\uACE0
+    \uC18C\uC2DD\uC744 \uC804\uD574\uC8FC\uC790"
+  chat_mission: 1
+  name_to_talk: NPC
+  lines:
+  - "\uD788\uC5B4\uB85C\uB2D8, \uB108\uBB34 \uAC10\uC0AC\uD569\uB2C8\uB2E4! "
+  - "\uB355\uBD84\uC5D0 \uC774\uC81C \uB9C8\uC74C \uD3B8\uD788 \uC788\uC744 \uC218
+    \uC788\uAC8C \uB418\uC5C8\uC5B4\uC694."
+  - "\uC800\uD76C\uB97C \uB3C4\uC640\uC8FC\uB294 \uAC74 \uD788\uC5B4\uB85C\uB2D8\uBFD0\uC774\uC5D0\uC694.
+    \uC815\uB9D0 \uAC10\uC0AC\uB4DC\uB9BD\uB2C8\uB2E4. "
+  kill_mission: 0
+  name_to_kill: 
+  killAmount: 0
+  killAmount_progress: 0
+  to_spawn: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
+  is_complete: 0

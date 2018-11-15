@@ -7,6 +7,6 @@ public class SceneController : MonoBehaviour {
 
 	public void moveToMain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("LoadingScene");
     }
 }

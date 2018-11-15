@@ -7,13 +7,13 @@ public class DayTransition : MonoBehaviour {
 
     public float hold_speed;
     public float speed;
-    public GeneralManager general_manager;
 
     private void OnEnable()
     {
         Image background = this.GetComponent<Image>();
         Text text = this.transform.GetChild(0).GetComponent<Text>();
-        text.text = "Day " + general_manager.CurrentDay.ToString();
+        if(GeneralManager.GM != null)
+            text.text = "Day " + GeneralManager.GM.CurrentDay.ToString();
         StartCoroutine(fade_away(background, text));
     }
 

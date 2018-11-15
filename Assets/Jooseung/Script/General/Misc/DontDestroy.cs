@@ -6,6 +6,7 @@ public class DontDestroy : MonoBehaviour {
 
     public static bool exists = false;
     public static GameObject obj;
+    public bool isInitialized;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class DontDestroy : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+        isInitialized = true;
     }
 
 }

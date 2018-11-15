@@ -23,11 +23,23 @@ public class heroController : MonoBehaviour {
     public float health = 200;
     public float damage = 10;
 
-    //attacking parameters
-    public Collider2D enemyCollider;
-    //note: this probably needs to be in the enemy list?
-    //also note: create mechanism for attack order in enemies - closest enemy first?
-    public bool attack_able;
+    //Don't Destroy on Load
+    public static GameObject Player;
+    private void Awake()
+    {
+        if(Player == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            Player = this.gameObject;
+        }
+        else
+        {
+            if(Player != this.gameObject)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 
     // Use this for initialization
     void Start () {
@@ -36,31 +48,38 @@ public class heroController : MonoBehaviour {
 
         //prevents player from rotating on collision
         rigid.freezeRotation = true;
+
+        layermask = ~(LayerMask.GetMask("Player"));
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
  
         Move();
 
         if (Input.GetKeyDown(KeyCode.LeftControl)){
             BasicAttack();
         }
-	}
+        Debug.DrawRay(transform.position + new Vector3(0,1,0), transform.right * attackRange, Color.red);
+    }
 
+    private int direction = 1;
     void Move(){
-        //status.text = "Moving";
         if (Input.GetKey(KeyCode.RightArrow))
         {
             vel = walkforce;
             gameObject.GetComponent<Animator>().SetBool("walking", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
+
+            direction = 1;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             vel = -walkforce;
             gameObject.GetComponent<Animator>().SetBool("walking", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
+
+            direction = -1;
         }
         else
         {
@@ -92,29 +111,28 @@ public class heroController : MonoBehaviour {
         return false;
     }
 
-    void BasicAttack(){
-        if (attack_able)
+    public float attackRange;
+    private int layermask;
+    void BasicAttack()
+    {
+        //Attack Animation
+        gameObject.GetComponent<Animator>().SetTrigger("attack");
+
+        //Send raycast to get objects in line
+        RaycastHit2D hit;
+
+        if (direction == 1)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("attack");
-            enemyCollider.GetComponentInParent<enemyController>().health -= damage;
+            hit = Physics2D.Raycast(transform.position + new Vector3(0,1,0), transform.right, attackRange, layermask);
+        }
+        else
+        {
+            hit = Physics2D.Raycast(transform.position + new Vector3(0, 1, 0), -transform.right, attackRange, layermask);
+        }
+        if (hit.collider.tag == "Enemy")
+        {
+            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+            enemy.HP -= damage;
         }
     }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy") {
-            enemyCollider = other;
-            attack_able = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Enemy"){
-            attack_able = false;
-        }
-    }
-
-
 }

@@ -14,10 +14,15 @@ MonoBehaviour:
   submission_name: "\uD3ED\uB825\uBC30\uB97C \uBB34\uCC14\uB7EC\uB77C"
   submission_description: "\uD3ED\uB825\uBC30 \uBB34\uCC0C\uB974\uAE30"
   chat_mission: 0
-  name_to_talk: 
+  name_to_talk: NPC
   lines: []
   kill_mission: 1
   name_to_kill: Enemy
   killAmount: 3
-  killAmount_progress: 0
-  is_complete: 0
+  killAmount_progress: 3
+  to_spawn: {fileID: 1691207766700536, guid: 6db2540c2acf6694abdb37a235a9e4d8, type: 2}
+  minX: 50
+  maxX: 86
+  minY: -1
+  maxY: 5
+  is_complete: 1

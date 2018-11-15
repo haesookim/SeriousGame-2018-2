@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Jooseung/Scene/Start.unity
     guid: cd5ac8308e1258249aa5efe31d16f2f4
   - enabled: 1
-    path: Assets/Jooseung/Scene/Main.unity
+    path: Assets/Jooseung/Scene/Village.unity
     guid: b03916b4106cb3144b6435198a95aa51
   - enabled: 1
     path: Assets/Jooseung/Scene/City.unity
     guid: b0a37e66429125349a02b437d1334670
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 94a0f87c32a28d9418c6aa88b2dee7cc
   m_configObjects: {}

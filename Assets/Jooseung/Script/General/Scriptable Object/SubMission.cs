@@ -17,6 +17,9 @@ public class SubMission : ScriptableObject
     public string name_to_kill;
     public int killAmount;
     public int killAmount_progress;
+    public GameObject to_spawn;
+    public float minX, maxX;
+    public float minY, maxY;
 
     public bool is_complete = false;
 
@@ -34,6 +37,12 @@ public class SubMission : ScriptableObject
         }
         if (kill_mission)
         {
+            for(int i = 0; i < killAmount; i++)
+            {
+                float xPos = Random.Range(minX, maxX);
+                float yPos = Random.Range(minY, maxY);
+                Instantiate(to_spawn, new Vector2(xPos, yPos), Quaternion.identity);
+            }
             
         }
     }

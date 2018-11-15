@@ -6,25 +6,26 @@ using UnityEngine.UI;
 public class GeneralManager : MonoBehaviour {
 
     public static GeneralManager GM;
-
     private void Awake()
     {
-        if(GM == null)
+        InitializeGM();
+    }
+    public bool isInitialized = false;
+    public void InitializeGM()
+    {
+        if (GM == null)
         {
             DontDestroyOnLoad(gameObject);
             GM = this;
         }
         else
         {
-            if(GM != this)
+            if (GM != this)
             {
                 Destroy(gameObject);
             }
         }
-    }
-    private void InitializeGM()
-    {
-
+        isInitialized = true;
     }
 
     private void Update()

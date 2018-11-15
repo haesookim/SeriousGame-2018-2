@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - GeneralManager
   - DontDestroy
+  - SpawnPos
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - players
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

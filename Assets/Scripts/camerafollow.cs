@@ -8,6 +8,23 @@ public class camerafollow : MonoBehaviour {
     public bool init = true;
     public Vector3 originpos;
 
+    public static GameObject Camera;
+    private void Awake()
+    {
+        if(Camera == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            Camera = this.gameObject;
+        }
+        else
+        {
+            if(Camera != this.gameObject)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
     void Start()
     {
         originpos = transform.position;

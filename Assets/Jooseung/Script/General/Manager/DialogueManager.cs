@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour {
 
     public static DialogueManager DM;
+    public bool isInitialized = false;
 
     private Text dialogue_box;
 
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+        isInitialized = true;
     }
 
     private void Start()
@@ -54,6 +56,7 @@ public class DialogueManager : MonoBehaviour {
 
     private IEnumerator showDialogue(string[] lines)
     {
+        dialogue_box.text = "";
         string[] dialogue = lines;
         while(current_line < dialogue.Length)
         {
