@@ -6,13 +6,9 @@ public class MissionContainer : MonoBehaviour {
 
     public Mission holding_mission;
 
-    public Image missionImage;
-    public Text missionDescription;
-    public Text missionName;
-
-    private void OnEnable()
+    public void SetMission()
     {
-        missionDescription.text = holding_mission.Mission_Description;
-        missionName.text = holding_mission.Mission_Name;
-    }
+        GeneralManager GM = GameObject.FindGameObjectWithTag("GeneralManager").GetComponent<GeneralManager>();
+        GM.CurrentMission = holding_mission;
+    } 
 }

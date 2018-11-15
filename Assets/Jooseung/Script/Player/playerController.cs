@@ -48,5 +48,4 @@ public class playerController : MonoBehaviour {
             this.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce);
         }
     }
-
 }
