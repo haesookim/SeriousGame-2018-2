@@ -11,7 +11,7 @@ public class enemyController : MonoBehaviour {
     public float health = 50;
     public float damage = 5;
 
-    public Text healthtext;
+    //public Text healthtext;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,9 @@ public class enemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        healthtext.text = ""+health;
+        //healthtext.text = ""+health;
+        if (health <= 0){
+            Destroy(gameObject);
+        }
 	}
 }
