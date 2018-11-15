@@ -5,7 +5,30 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
+    public static DialogueManager DM;
+
     private Text dialogue_box;
+
+    private void Awake()
+    {
+        InitializeDM();
+    }
+
+    private void InitializeDM()
+    {
+        if(DM == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            DM = this;
+        }
+        else
+        {
+            if(DM != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
     private void Start()
     {

@@ -16,10 +16,9 @@ public class DialogueTrigger : MonoBehaviour {
 
     private void Awake()
     {
-        DM = FindObjectOfType<DialogueManager>();
-        GM = FindObjectOfType<GeneralManager>();
+        GameObject DontDestroy = GameObject.FindGameObjectWithTag("DontDestroy");
+        DM = DialogueManager.DM;
     }
- 
     void Update()
     {
         if (hasQuest)
@@ -38,7 +37,7 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (collision.transform.tag == "Player" && hasQuest)
         {
-            if (Input.GetKeyDown(KeyCode.C) && !DM.gameObject.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 DM.OpenDialogue(lines);
                 hasQuest = false;

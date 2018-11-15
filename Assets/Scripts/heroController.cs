@@ -17,7 +17,7 @@ public class heroController : MonoBehaviour {
     public bool jump = false;
 
     //check status of player if necessary
-    public Text status;
+    //public Text status;
 
     //health and damage parameters
     public float health = 200;
@@ -40,6 +40,7 @@ public class heroController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+ 
         Move();
 
         if (Input.GetKeyDown(KeyCode.LeftControl)){
@@ -48,7 +49,7 @@ public class heroController : MonoBehaviour {
 	}
 
     void Move(){
-        status.text = "Moving";
+        //status.text = "Moving";
         if (Input.GetKey(KeyCode.RightArrow))
         {
             vel = walkforce;
@@ -75,9 +76,10 @@ public class heroController : MonoBehaviour {
 
         if (jump){
             if (isGrounded()){
-                gameObject.GetComponent<Animator>().SetBool("jump", false);
                 jump = false;
             }
+        } else{
+            gameObject.GetComponent<Animator>().SetBool("jump", false);
         }
         gameObject.transform.position = gameObject.transform.position + vel * Time.deltaTime * 3;
     }
@@ -91,18 +93,29 @@ public class heroController : MonoBehaviour {
     }
 
     void BasicAttack(){
+<<<<<<< HEAD
         status.text = "Attacking";
         if (attack_able)
         {
             Debug.Log("Boom");
+=======
+        if (attack_able)
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("attack");
+>>>>>>> origin/CharacterController
             enemyCollider.GetComponentInParent<enemyController>().health -= damage;
         }
     }
 
 
+<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Contact");
+=======
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+>>>>>>> origin/CharacterController
         if (other.tag == "Enemy") {
             enemyCollider = other;
             attack_able = true;

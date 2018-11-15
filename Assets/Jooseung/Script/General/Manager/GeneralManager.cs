@@ -5,6 +5,28 @@ using UnityEngine.UI;
 
 public class GeneralManager : MonoBehaviour {
 
+    public static GeneralManager GM;
+
+    private void Awake()
+    {
+        if(GM == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            GM = this;
+        }
+        else
+        {
+            if(GM != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+    private void InitializeGM()
+    {
+
+    }
+
     private void Update()
     {
         if (current_mission == null) {
@@ -33,11 +55,11 @@ public class GeneralManager : MonoBehaviour {
         }
         else if (current_submission.kill_mission)
         {
-            submission_description.text = current_submission.submission_description 
-                + ":  (" + current_submission.killAmount_progress+ " / " + current_submission.killAmount + ")";
+            submission_description.text = current_submission.submission_description
+                + ":  (" + current_submission.killAmount_progress + " / " + current_submission.killAmount + ")";
         }
-        
-        
+
+
 
         //Check Progress of Submission
         current_submission.Check_Progress();
@@ -86,6 +108,11 @@ public class GeneralManager : MonoBehaviour {
     private SubMission current_submission = null;
     private int submission_index = 0;
     private bool is_submission_initialized = false;
+    public bool Submission_Initialized{
+        set {
+            is_submission_initialized = value;
+        }
+    }
     public GameObject submission_board;
     private Text submission_title;
     private Text submission_description;

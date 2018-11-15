@@ -14,10 +14,10 @@ public class playerController : MonoBehaviour {
     private Animator anim;
     private bool isRunning;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         anim = this.GetComponent<Animator>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
