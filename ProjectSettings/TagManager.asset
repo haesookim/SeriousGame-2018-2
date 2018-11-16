@@ -9,6 +9,7 @@ TagManager:
   - DontDestroy
   - SpawnPos
   - DialogueManager
+  - Platform
   layers:
   - Default
   - TransparentFX

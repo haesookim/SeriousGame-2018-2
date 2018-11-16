@@ -116,4 +116,12 @@ public class EnemyController : MonoBehaviour {
             hero.health -= damage;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Platform")
+        {
+            this.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 500);
+        }
+    }
 }
