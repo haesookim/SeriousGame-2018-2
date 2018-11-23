@@ -9,14 +9,15 @@ public class heroController : MonoBehaviour {
     //movement variables
     private Vector3 vel;
     private Vector3 idle = new Vector3(0, 0);
-    public Vector3 jumpforce = new Vector3(0, 10);
+    public Vector3 jumpforce = new Vector3(0, 30);
     public Vector3 walkforce = new Vector3(1f, 0);
+    public Vector3 runforce = new Vector3(3f, 0);
+
+    //controls
+    private bool canMove = true;
 
     private Rigidbody2D rb;
     private Animator anim;
-    
-    //check status of player if necessary
-    //public Text status;
 
     //health and damage parameters
     public float health = 200;
@@ -25,6 +26,7 @@ public class heroController : MonoBehaviour {
 
     //Don't Destroy on Load
     public static GameObject Player;
+
     private void Awake()
     {
         if(Player == null)
@@ -57,21 +59,36 @@ public class heroController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
- 
-        Move();
-        jump();
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && canAttack){
+        if (canMove){
+            Move();
+            jump();
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl) && canAttack){
             StartCoroutine(BasicAttack());
         }
-        Debug.DrawRay(transform.position + new Vector3(0,1,0), transform.right * attackRange, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(0,1,0), direction* transform.right * attackRange, Color.red);
     }
 
     private int direction = 1;
+    private Vector3 speed;
     void Move(){
+        //are we running?
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = runforce;
+            gameObject.GetComponent<Animator>().SetBool("isRunning", true);
+        }
+        else
+        {
+            speed = walkforce;
+            gameObject.GetComponent<Animator>().SetBool("isRunning", false);
+        }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            vel = walkforce;
+            vel = speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
@@ -79,7 +96,7 @@ public class heroController : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            vel = -walkforce;
+            vel = -speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
@@ -90,6 +107,7 @@ public class heroController : MonoBehaviour {
             gameObject.GetComponent<Animator>().SetBool("isWalking", false);
             vel = idle;
         }
+
         gameObject.transform.position = gameObject.transform.position + vel * Time.deltaTime * 3;
     }
 
@@ -124,9 +142,11 @@ public class heroController : MonoBehaviour {
     public float attackRange;
     private int layermask;
     private bool canAttack = true;
+    private Vector3 knockback = new Vector3(2f, 0);
     private IEnumerator BasicAttack()
     {
         canAttack = false;
+        canMove = false;
         //Attack Animation
         anim.SetBool("isPunching", true);
 
@@ -139,7 +159,7 @@ public class heroController : MonoBehaviour {
         }
         else
         {
-            hit = Physics2D.Raycast(transform.position + new Vector3(0, 1, 0), -transform.right, attackRange, layermask);
+            hit = Physics2D.Raycast(transform.position + new Vector3(0, -1, 0), -transform.right, attackRange, layermask);
         }
         if (hit.collider != null)
         {
@@ -147,6 +167,9 @@ public class heroController : MonoBehaviour {
             {
                 EnemyController enemy = hit.collider.GetComponent<EnemyController>();
                 enemy.HP -= damage;
+
+                //can I implement knockback?
+                enemy.GetComponentInParent<Rigidbody2D>().AddForce(direction * knockback);
             }
         }
         float attackTimer = Time.fixedTime + attackSpeed;
@@ -156,6 +179,9 @@ public class heroController : MonoBehaviour {
         }
         anim.SetBool("isPunching", false);
         canAttack = true;
+        canMove = true;
         yield return null;
     }
+
+    //weapon switching script
 }
