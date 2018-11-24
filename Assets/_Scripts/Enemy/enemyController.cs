@@ -8,10 +8,10 @@ public class enemyController : MonoBehaviour {
     //probably better to create a basic interface then import to all enemy types
     //would need: health, damage, etc...
 
-    public float health = 50;
+    public float HP = 50;
     public float damage = 5;
 
-    //public Text healthtext;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +20,7 @@ public class enemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //healthtext.text = ""+health;
-        if (health <= 0){
+        if (HP <= 0){
             Destroy(gameObject);
         }
 	}

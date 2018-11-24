@@ -24,6 +24,14 @@ public class heroController : MonoBehaviour {
     public float damage = 10;
     public float attackSpeed;
 
+    //type of weapon
+    enum WeaponSelected {
+        Basic = 1,
+        LongRangeGun,
+        FlameThrower,
+        GrenadeLauncher
+    }
+
     //Don't Destroy on Load
     public static GameObject Player;
 
@@ -129,7 +137,7 @@ public class heroController : MonoBehaviour {
     private bool onGround()
     {
         float velocity_y = rb.velocity.y;
-        if(velocity_y == 0)
+        if(velocity_y.Equals(0))
         {
             return true;
         }
@@ -145,6 +153,7 @@ public class heroController : MonoBehaviour {
     private Vector3 knockback = new Vector3(2f, 0);
     private IEnumerator BasicAttack()
     {
+        damage = 10;
         canAttack = false;
         canMove = false;
         //Attack Animation
@@ -183,5 +192,30 @@ public class heroController : MonoBehaviour {
         yield return null;
     }
 
-    //weapon switching script
+    //need a weapon switching script - sprite changes?
+
+    //weapons and attacking - do we need reload or ability cooldown features?
+    //do I need to define projectile damage constants here or do I define them in the projectiles
+    public GameObject bullet;
+    public Transform gunPoint;
+
+    private IEnumerator LongRangeGunAttack(){
+        damage = 15;
+        yield return null;
+    }
+
+    private IEnumerator FlameThrowerAttack(){
+        damage = 15; //per second
+        yield return null;
+    }
+
+    public GameObject grenade;
+    public Transform grenadePoint;
+
+    private IEnumerator GrenadeLauncherAttack()
+    {
+        damage = 70;
+        Instantiate(grenade, grenadePoint);
+        yield return null;
+    }
 }
