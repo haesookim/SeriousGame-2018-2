@@ -25,12 +25,14 @@ public class heroController : MonoBehaviour {
     public float attackSpeed;
 
     //type of weapon
-    enum WeaponSelected {
-        Basic = 1,
+    enum WeaponType
+    {
+        Basic,
         LongRangeGun,
         FlameThrower,
         GrenadeLauncher
     }
+    private WeaponType ActiveWeapon = WeaponType.Basic;
 
     //Don't Destroy on Load
     public static GameObject Player;
@@ -73,8 +75,10 @@ public class heroController : MonoBehaviour {
             jump();
         }
 
+        SwitchWeapon();
+
         if (Input.GetKey(KeyCode.LeftControl) && canAttack){
-            StartCoroutine(BasicAttack());
+            Attack();
         }
         Debug.DrawRay(transform.position + new Vector3(0,1,0), direction* transform.right * attackRange, Color.red);
     }
@@ -147,6 +151,43 @@ public class heroController : MonoBehaviour {
         }
     }
 
+    //Everything to do with Attacking and Weapons
+
+    //need a weapon switching script - sprite changes?
+    //Assign Right shift as dummy weapon switching key
+    void SwitchWeapon(){
+        if (Input.GetKeyDown(KeyCode.RightShift)){
+            if (ActiveWeapon == WeaponType.GrenadeLauncher)
+            {
+                ActiveWeapon = WeaponType.Basic;
+            }
+            else
+            {
+                ActiveWeapon = (ActiveWeapon + 1);
+            }
+            Debug.Log(ActiveWeapon);
+        }
+    }
+
+    //weapons and attacking - do we need reload or ability cooldown features?
+    void Attack() {
+        switch (ActiveWeapon){
+            case WeaponType.Basic:
+                StartCoroutine(BasicAttack());
+                break;
+            case WeaponType.LongRangeGun:
+                StartCoroutine(LongRangeGunAttack());
+                break;
+            case WeaponType.FlameThrower:
+                StartCoroutine(FlameThrowerAttack());
+                break;
+            case WeaponType.GrenadeLauncher:
+                StartCoroutine(GrenadeLauncherAttack());
+                break;
+        }
+    }
+
+
     public float attackRange;
     private int layermask;
     private bool canAttack = true;
@@ -182,7 +223,7 @@ public class heroController : MonoBehaviour {
             }
         }
         float attackTimer = Time.fixedTime + attackSpeed;
-        while(attackTimer > Time.fixedTime)
+        while (attackTimer > Time.fixedTime)
         {
             yield return null;
         }
@@ -192,9 +233,7 @@ public class heroController : MonoBehaviour {
         yield return null;
     }
 
-    //need a weapon switching script - sprite changes?
 
-    //weapons and attacking - do we need reload or ability cooldown features?
     //do I need to define projectile damage constants here or do I define them in the projectiles
     public GameObject bullet;
     public Transform gunPoint;
@@ -210,12 +249,15 @@ public class heroController : MonoBehaviour {
     }
 
     public GameObject grenade;
+
     public Transform grenadePoint;
 
     private IEnumerator GrenadeLauncherAttack()
     {
         damage = 70;
-        Instantiate(grenade, grenadePoint);
+
+        GameObject newGrenade = Instantiate(grenade, grenadePoint.transform.position, grenadePoint.rotation);
+        newGrenade.GetComponent<Rigidbody2D>().velocity = newGrenade.transform.forward * 10;
         yield return null;
     }
 }
