@@ -986,6 +986,8 @@ MonoBehaviour:
   health: 200
   damage: 10
   attackSpeed: 1
+  gunSpeed: 0.5
+  grenadeSpeed: 2
   attackRange: 2
   bullet: {fileID: 0}
   gunPoint: {fileID: 0}

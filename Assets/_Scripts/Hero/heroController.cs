@@ -22,7 +22,12 @@ public class heroController : MonoBehaviour {
     //health and damage parameters
     public float health = 200;
     public float damage = 10;
+
+    //weapon cool parameters
     public float attackSpeed;
+    public float gunSpeed;
+    //do we need speed for flamethrower?
+    public float grenadeSpeed;
 
     //type of weapon
     enum WeaponType
@@ -76,6 +81,7 @@ public class heroController : MonoBehaviour {
         }
 
         SwitchWeapon();
+
 
         if (Input.GetKey(KeyCode.LeftControl) && canAttack){
             Attack();
@@ -192,6 +198,8 @@ public class heroController : MonoBehaviour {
     private int layermask;
     private bool canAttack = true;
     private Vector3 knockback = new Vector3(2f, 0);
+    //added this
+    private float attackTimer;
     private IEnumerator BasicAttack()
     {
         damage = 10;
@@ -222,7 +230,7 @@ public class heroController : MonoBehaviour {
                 enemy.GetComponentInParent<Rigidbody2D>().AddForce(direction * knockback);
             }
         }
-        float attackTimer = Time.fixedTime + attackSpeed;
+        attackTimer = Time.fixedTime + attackSpeed;
         while (attackTimer > Time.fixedTime)
         {
             yield return null;
@@ -249,15 +257,24 @@ public class heroController : MonoBehaviour {
     }
 
     public GameObject grenade;
-
     public Transform grenadePoint;
 
     private IEnumerator GrenadeLauncherAttack()
     {
         damage = 70;
+        canAttack = false;
+        canMove = false;
 
         GameObject newGrenade = Instantiate(grenade, grenadePoint.transform.position, grenadePoint.rotation);
         newGrenade.GetComponent<Rigidbody2D>().velocity = newGrenade.transform.forward * 10;
+
+        attackTimer = Time.fixedTime + grenadeSpeed;
+        while (attackTimer > Time.fixedTime)
+        {
+            yield return null;
+        }
+        canAttack = true;
+        canMove = true;
         yield return null;
     }
 }
