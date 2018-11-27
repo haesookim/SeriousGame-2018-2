@@ -89,7 +89,7 @@ public class heroController : MonoBehaviour {
         Debug.DrawRay(transform.position + new Vector3(0,1,0), direction* transform.right * attackRange, Color.red);
     }
 
-    private int direction = 1;
+    public int direction = 1;
     private Vector3 speed;
     void Move(){
         //are we running?
@@ -108,7 +108,8 @@ public class heroController : MonoBehaviour {
         {
             vel = speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
             direction = 1;
         }
@@ -116,7 +117,8 @@ public class heroController : MonoBehaviour {
         {
             vel = -speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
+            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
             direction = -1;
         }
@@ -266,15 +268,14 @@ public class heroController : MonoBehaviour {
         canMove = false;
 
         GameObject newGrenade = Instantiate(grenade, grenadePoint.transform.position, grenadePoint.rotation);
-        newGrenade.GetComponent<Rigidbody2D>().velocity = newGrenade.transform.forward * 10;
-
+        newGrenade.GetComponent<Grenade>().direction = direction;
+        canMove = true;
         attackTimer = Time.fixedTime + grenadeSpeed;
         while (attackTimer > Time.fixedTime)
         {
             yield return null;
         }
         canAttack = true;
-        canMove = true;
         yield return null;
     }
 }
