@@ -199,8 +199,7 @@ public class heroController : MonoBehaviour {
     public float attackRange;
     private int layermask;
     private bool canAttack = true;
-    private Vector3 knockback = new Vector3(2f, 0);
-    //added this
+    private Vector3 knockback = new Vector3(2f, 0); /*still not implemented yet*/
     private float attackTimer;
     private IEnumerator BasicAttack()
     {
@@ -250,6 +249,18 @@ public class heroController : MonoBehaviour {
 
     private IEnumerator LongRangeGunAttack(){
         damage = 15;
+        canAttack = false;
+        canMove = false;
+
+        GameObject newBullet = Instantiate(bullet, gunPoint.transform.position, gunPoint.rotation);
+        newBullet.GetComponent<Bullet>().direction = direction;
+        canMove = true; /*this should be changed with the animator sequence*/
+        attackTimer = Time.fixedTime + gunSpeed;
+        while (attackTimer > Time.fixedTime)
+        {
+            yield return null;
+        }
+        canAttack = true;
         yield return null;
     }
 
@@ -269,7 +280,7 @@ public class heroController : MonoBehaviour {
 
         GameObject newGrenade = Instantiate(grenade, grenadePoint.transform.position, grenadePoint.rotation);
         newGrenade.GetComponent<Grenade>().direction = direction;
-        canMove = true;
+        canMove = true; /*this should be changed with the animator sequence*/
         attackTimer = Time.fixedTime + grenadeSpeed;
         while (attackTimer > Time.fixedTime)
         {

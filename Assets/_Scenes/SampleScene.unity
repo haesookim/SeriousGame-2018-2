@@ -996,8 +996,8 @@ MonoBehaviour:
   grenadeSpeed: 1
   direction: 1
   attackRange: 2
-  bullet: {fileID: 0}
-  gunPoint: {fileID: 0}
+  bullet: {fileID: 1811755080447966, guid: 07e6e6204cd0b459fbf229760a68556a, type: 2}
+  gunPoint: {fileID: 1908526995}
   grenade: {fileID: 1794948340048410, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
   grenadePoint: {fileID: 963320}
 --- !u!95 &430496034
@@ -1078,6 +1078,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 963320}
+  - {fileID: 1908526995}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1429,9 +1430,10 @@ GameObject:
   - component: {fileID: 1265325816}
   - component: {fileID: 1265325815}
   - component: {fileID: 1265325814}
+  - component: {fileID: 1265325817}
   m_Layer: 0
   m_Name: House
-  m_TagString: Untagged
+  m_TagString: DestroyableBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1508,48 +1510,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1270608831
-Prefab:
+--- !u!61 &1265325817
+BoxCollider2D:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265325813}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09091568, y: -0.07955122}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.96, y: 8.6}
+    newSize: {x: 8.96, y: 8.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113937149608618, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e4eac4d393b144b53b8858fa4fb21d24, type: 2}
-  m_IsPrefabAsset: 0
+  m_Size: {x: 5.914345, y: 7.3499193}
+  m_EdgeRadius: 0
 --- !u!4 &1355837971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4899590302661120, guid: a3959d4f730d748ab94ba83ed35bf545,
@@ -1928,6 +1913,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4899590302661120, guid: a3959d4f730d748ab94ba83ed35bf545,
     type: 2}
   m_PrefabInternal: {fileID: 1155604272}
+--- !u!1 &1908526994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908526995}
+  m_Layer: 8
+  m_Name: GunPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908526995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908526994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.32, y: 1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 430496036}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1937142188
 Prefab:
   m_ObjectHideFlags: 0
@@ -2146,6 +2159,17 @@ Prefab:
       propertyPath: m_Name
       value: GrenadePoint
       objectReference: {fileID: 0}
+    - target: {fileID: 114159302340158580, guid: 77ffedfd140c54fca98c400c192d22e7,
+        type: 2}
+      propertyPath: gunPoint
+      value: 
+      objectReference: {fileID: 1908526995}
+    - target: {fileID: 114159302340158580, guid: 77ffedfd140c54fca98c400c192d22e7,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1811755080447966, guid: 07e6e6204cd0b459fbf229760a68556a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ffedfd140c54fca98c400c192d22e7, type: 2}
   m_IsPrefabAsset: 0

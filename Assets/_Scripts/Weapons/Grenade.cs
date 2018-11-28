@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Grenade : MonoBehaviour {
-
-    //speed of the projectile - probably needs to be 
+ 
     public Vector3 shootforce;
     private Rigidbody2D rb;
     private bool shot = false;
