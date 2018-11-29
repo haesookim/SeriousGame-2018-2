@@ -109,7 +109,6 @@ public class heroController : MonoBehaviour {
             vel = speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
             direction = 1;
         }
@@ -118,7 +117,6 @@ public class heroController : MonoBehaviour {
             vel = -speed;
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
             transform.rotation = Quaternion.Euler(0, 180f, 0);
-            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
             direction = -1;
         }
@@ -224,7 +222,8 @@ public class heroController : MonoBehaviour {
         {
             if (hit.collider.tag == "Enemy")
             {
-                EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+                //my enemy controller for now
+                enemyController enemy = hit.collider.GetComponent<enemyController>();
                 enemy.HP -= damage;
 
                 //can I implement knockback?

@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Enemy"){
-            Hit(collision.collider);
+            Hit(collision);
         }
         else if (collision.collider.tag == "Player"){
             //don't do anything
@@ -34,10 +34,10 @@ public class Bullet : MonoBehaviour
 
     }
 
-    void Hit(Collider2D enemyCollider)
+    void Hit(Collision2D enemyCollider)
     {
         Debug.Log("It hit!");
-        enemyCollider.GetComponentInParent<EnemyController>().HP -= 40;
+        enemyCollider.collider.GetComponent<enemyController>().HP -= 40;
         Destroy(gameObject);
     }
 }
