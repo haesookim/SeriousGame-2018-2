@@ -986,9 +986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d056bf40a0a4d32a14b8ef99028750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpforce: {x: 0, y: 10, z: 0}
-  walkforce: {x: 1, y: 0, z: 0}
-  runforce: {x: 3, y: 0, z: 0}
   health: 200
   damage: 10
   attackSpeed: 1
@@ -2170,6 +2167,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1811755080447966, guid: 07e6e6204cd0b459fbf229760a68556a,
         type: 2}
+    - target: {fileID: 114159302340158580, guid: 77ffedfd140c54fca98c400c192d22e7,
+        type: 2}
+      propertyPath: jumpforce.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ffedfd140c54fca98c400c192d22e7, type: 2}
   m_IsPrefabAsset: 0

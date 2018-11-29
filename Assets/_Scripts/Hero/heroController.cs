@@ -9,9 +9,9 @@ public class heroController : MonoBehaviour {
     //movement variables
     private Vector3 vel;
     private Vector3 idle = new Vector3(0, 0);
-    public Vector3 jumpforce = new Vector3(0, 30);
-    public Vector3 walkforce = new Vector3(1f, 0);
-    public Vector3 runforce = new Vector3(3f, 0);
+    private Vector3 jumpforce = new Vector3(0, 10f);
+    private Vector3 walkforce = new Vector3(1f, 0);
+    private Vector3 runforce = new Vector3(3f, 0);
 
     //controls
     private bool canMove = true;
@@ -86,7 +86,7 @@ public class heroController : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftControl) && canAttack){
             Attack();
         }
-        Debug.DrawRay(transform.position + new Vector3(0,1,0), direction* transform.right * attackRange, Color.red);
+        //Debug.DrawRay(transform.position + new Vector3(0,1,0), direction* transform.right * attackRange, Color.red);
     }
 
     public int direction = 1;
@@ -248,7 +248,6 @@ public class heroController : MonoBehaviour {
     public Transform gunPoint;
 
     private IEnumerator LongRangeGunAttack(){
-        damage = 15;
         canAttack = false;
         canMove = false;
 
@@ -274,7 +273,6 @@ public class heroController : MonoBehaviour {
 
     private IEnumerator GrenadeLauncherAttack()
     {
-        damage = 70;
         canAttack = false;
         canMove = false;
 

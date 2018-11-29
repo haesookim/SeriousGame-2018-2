@@ -89,8 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000f5667d46ab43beb453c7e8d42e3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootforce: {x: 15, y: 0, z: 0}
+  shootforce: {x: 500, y: 0, z: 0}
   direction: 0
+  damage: 40
 --- !u!212 &212365186583562272
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public class Grenade : MonoBehaviour {
     private Rigidbody2D rb;
     private bool shot = false;
     public int direction;
+    public float damage = 70;
 
     public GameObject explosionEffect;
 
