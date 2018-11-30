@@ -166,10 +166,22 @@ public class heroController : MonoBehaviour {
             if (ActiveWeapon == WeaponType.GrenadeLauncher)
             {
                 ActiveWeapon = WeaponType.Basic;
+                anim.runtimeAnimatorController = Resources.Load("Animation/hero/basic/hero") as RuntimeAnimatorController;
             }
-            else
+            else if (ActiveWeapon == WeaponType.Basic)
             {
-                ActiveWeapon = (ActiveWeapon + 1);
+                ActiveWeapon = WeaponType.LongRangeGun;
+                anim.runtimeAnimatorController = Resources.Load("Animation/hero/gun/gun_anim") as RuntimeAnimatorController;
+            }
+            else if (ActiveWeapon == WeaponType.LongRangeGun)
+            {
+                ActiveWeapon = WeaponType.FlameThrower;
+                anim.runtimeAnimatorController = Resources.Load("Animation/hero/flame/flame_anim") as RuntimeAnimatorController;
+            }
+            else if (ActiveWeapon == WeaponType.FlameThrower)
+            {
+                ActiveWeapon = WeaponType.GrenadeLauncher;
+                anim.runtimeAnimatorController = Resources.Load("Animation/hero/grenade/grenade_anim") as RuntimeAnimatorController;
             }
             Debug.Log(ActiveWeapon);
         }
@@ -249,15 +261,17 @@ public class heroController : MonoBehaviour {
     private IEnumerator LongRangeGunAttack(){
         canAttack = false;
         canMove = false;
+        anim.SetBool("isPunching", true);
 
         GameObject newBullet = Instantiate(bullet, gunPoint.transform.position, gunPoint.rotation);
         newBullet.GetComponent<Bullet>().direction = direction;
-        canMove = true; /*this should be changed with the animator sequence*/
         attackTimer = Time.fixedTime + gunSpeed;
         while (attackTimer > Time.fixedTime)
         {
             yield return null;
         }
+        canMove = true; /*this should be changed with the animator sequence*/
+        anim.SetBool("isPunching", false);
         canAttack = true;
         yield return null;
     }
@@ -274,15 +288,17 @@ public class heroController : MonoBehaviour {
     {
         canAttack = false;
         canMove = false;
+        anim.SetBool("isPunching", true);
 
         GameObject newGrenade = Instantiate(grenade, grenadePoint.transform.position, grenadePoint.rotation);
         newGrenade.GetComponent<Grenade>().direction = direction;
-        canMove = true; /*this should be changed with the animator sequence*/
         attackTimer = Time.fixedTime + grenadeSpeed;
         while (attackTimer > Time.fixedTime)
         {
             yield return null;
         }
+        anim.SetBool("isPunching", false);
+        canMove = true; /*this should be changed with the animator sequence*/
         canAttack = true;
         yield return null;
     }
