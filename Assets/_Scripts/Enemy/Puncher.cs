@@ -43,7 +43,6 @@ public class Puncher: MonoBehaviour
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
         float distance = Vector2.Distance(Player.transform.position, this.transform.position);
-        Debug.Log(distance);
         if (distance > attackRange && distance < noticeRange)
         {
             gameObject.GetComponentInParent<enemyController>().inactive = false;
