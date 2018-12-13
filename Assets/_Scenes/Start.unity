@@ -301,6 +301,7 @@ MonoBehaviour:
   background_image: {fileID: 1839570998}
   background_music_fade_speed: 0.2
   background_image_fade_speed: 1
+  scene_name: Tutorial
 --- !u!82 &1630802286
 AudioSource:
   m_ObjectHideFlags: 0

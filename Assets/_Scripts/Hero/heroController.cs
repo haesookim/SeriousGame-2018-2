@@ -15,6 +15,15 @@ public class heroController : MonoBehaviour {
 
     //controls
     private bool canMove = true;
+    private bool active = true;
+    public bool State {
+        get {
+            return active;
+        }
+        set {
+            active = value;
+        }
+    }
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -40,7 +49,7 @@ public class heroController : MonoBehaviour {
     private WeaponType ActiveWeapon = WeaponType.Basic;
 
     //Don't Destroy on Load
-    public static GameObject Player;
+    public GameObject Player;
 
     private void Awake()
     {
@@ -74,6 +83,7 @@ public class heroController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (!active) return;
 
         if (canMove){
             Move();

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
+  m_Name: Tutorial_Submission1
+  m_EditorClassIdentifier: 
+  submission_name: "\uC6B8\uACE0 \uC788\uB294 \uC544\uC774"
+  submission_description: "\uC6B8\uACE0 \uC788\uB294 \uC544\uC774\uC640 \uB300\uD654\uB97C
+    \uB098\uB204\uC5B4\uB77C"
+  chat_mission: 1
+  name_to_talk: NPC_Tutorial
+  lines:
+  - "\uD751\uD751 \uB3C4\uC640\uC8FC\uC138\uC694"
+  - "\uBD88\uB7C9\uBC30\uB4E4\uC774 \uC808 \uB9E8\uB0A0 \uB54C\uB824\uC694"
+  - "\uADF8\uB4E4\uC744 \uD63C\uCB50 \uB0B4\uC8FC\uC138\uC694"
+  kill_mission: 0
+  name_to_kill: 
+  killAmount: 0
+  killAmount_progress: 0
+  to_spawn: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
+  is_complete: 0
