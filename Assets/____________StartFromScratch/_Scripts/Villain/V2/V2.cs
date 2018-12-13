@@ -104,8 +104,13 @@ public class V2 : MonoBehaviour, Damageable {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
+        float speed = charge_speed;
+        float friction = 0.1f;
         while (timer > Time.fixedTime) {
-            transform.Translate(charge_speed * Time.deltaTime, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
+            if(speed > 0)
+                speed -= Time.deltaTime * friction;
+            friction += 0.5f;
             yield return null;
         }
 

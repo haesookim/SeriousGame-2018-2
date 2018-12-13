@@ -9,8 +9,10 @@ public class V4 : MonoBehaviour, Damageable {
     [SerializeField] private float attack_damage;
 
     [Header("Attack")]
-    [SerializeField] private float charge_speed;
-    [SerializeField] private float charge_time;
+    [SerializeField] private float bullet_force;
+    [SerializeField] private float bullet_damage;
+    [SerializeField] private float bullet_radius;
+    [SerializeField] private float bullet_time;
 
     [Header("Walk")]
     [SerializeField] private float walk_time;
@@ -22,7 +24,11 @@ public class V4 : MonoBehaviour, Damageable {
     //------------------------------[Villain Components]
     private Animator anim;
     private float current_hp;
-    private bool can_start_pattern;
+    private bool can_start_pattern = true;
+
+    [Header("Weapon")]
+    public GameObject bullet;
+    public Transform bullet_position;
 
     private enum State
     {
@@ -39,6 +45,7 @@ public class V4 : MonoBehaviour, Damageable {
 	}
 	
 	void Update () {
+        
         if (can_start_pattern) {
             can_start_pattern = false;
             switch (current_state) {
@@ -93,16 +100,26 @@ public class V4 : MonoBehaviour, Damageable {
         while (timer > Time.fixedTime) {
             yield return null;
         }
-        int next_state = Random.Range(0, 3);
-        current_state = (State)next_state;
+        current_state = next_state();
         can_start_pattern = true;
         yield return null;
     }
 
     private IEnumerator shoot() {
+        float timer = Time.fixedTime + 0.27f;
+        anim.SetTrigger("shoot");
 
+        GameObject spawned_bullet = Instantiate(bullet, bullet_position);
+        spawned_bullet.transform.position = bullet_position.transform.position;
+        spawned_bullet.GetComponent<Rigidbody2D>().AddForce((bullet_position.transform.right + bullet_position.transform.up * 0.5f) * bullet_force);
+        spawned_bullet.GetComponent<V4_bullet>().SetUpBullet(bullet_damage, bullet_time, bullet_radius);
+        spawned_bullet.transform.SetParent(null);
+        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), spawned_bullet.GetComponent<CircleCollider2D>());
+
+        while (timer > Time.fixedTime) {
+            yield return null;
+        }
         current_state = next_state();
-        Debug.Log("Shoot!");
         can_start_pattern = true;
         yield return null;
     }
