@@ -67,15 +67,17 @@ public class V4 : MonoBehaviour, Damageable {
 
     public void TakeDamage(float damage) {
         current_hp -= damage;
-        if (current_hp < 0 && current_state != State.Dead) {
+        if (current_hp < 0 && current_state != State.Dead)
+        {
             current_state = State.Dead;
             StopAllCoroutines();
             StartCoroutine(dead());
             check_mission();
             return;
         }
-        anim.SetTrigger("attacked");
-
+        else if (current_state != State.Dead) {
+            anim.SetTrigger("attacked");
+        }
     }
 
     private IEnumerator walk()

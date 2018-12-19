@@ -19,11 +19,6 @@ public class canon_missile : MonoBehaviour {
         StartCoroutine(explode());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        StartCoroutine(explode());
-    }
-
     private IEnumerator explode() {
         this.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
