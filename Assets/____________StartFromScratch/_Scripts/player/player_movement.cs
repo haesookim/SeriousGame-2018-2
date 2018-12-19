@@ -65,7 +65,7 @@ public class player_movement : MonoBehaviour {
         horizontal_movement = Input.GetAxisRaw("Horizontal");
 
         bool is_moving = false;
-        if (horizontal_movement != 0) {
+        if (!horizontal_movement.Equals(0)) {
             is_moving = true;
         }
         anim.SetBool("is_moving", is_moving);
@@ -94,7 +94,7 @@ public class player_movement : MonoBehaviour {
     private void jump() {
         float velocity_y = rb.velocity.y;
 
-        if (velocity_y == 0 && Input.GetKeyDown(Jump_Key))
+        if (velocity_y.Equals(0) && Input.GetKeyDown(Jump_Key))
         {
             rb.AddForce(Vector2.up * jump_force);
         }

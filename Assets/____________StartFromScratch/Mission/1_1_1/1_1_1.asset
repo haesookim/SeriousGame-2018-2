@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92853b0023e2a9a469fdbb7f390e9e6b, type: 3}
+  m_Name: 1_1_1
+  m_EditorClassIdentifier: 
+  Mission_Name: "\uD3ED\uB825\uBC30 \uC18C\uD0D5 \uC791\uC804"
+  Mission_Description_short: "\uB9C8\uC744 \uC0AC\uB78C\uB4E4\uC744 \uAD34\uB86D\uD788\uB294
+    \uD3ED\uB825\uBC30\uB97C \uBAB0\uC544\uB0B4\uC790!"
+  Mission_Description_long: "\uD3ED\uB825\uBC30\uB4E4\uC774 \uB098\uD0C0\uB0AC\uC5B4\uC694!
+    \uC0AC\uB78C\uB4E4\uC744 \uAD34\uB86D\uD788\uACE0 \uD611\uBC15\uD574\uC694!"
+  Reward_DOM: -18
+  Reward_Reputation: 5
+  Reward_Money: 0
+  submissions: []

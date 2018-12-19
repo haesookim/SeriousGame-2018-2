@@ -218,7 +218,7 @@ public class player_weapon : MonoBehaviour {
     public float canon_shoot_power;
     public float canon_radius;
     private IEnumerator canon_shoot() {
-        float timer_before_shoot = Time.fixedTime + 1.5f;
+        float timer_before_shoot = Time.fixedTime + 1f;
         anim.SetTrigger("to_grenade");
 
         GameObject spawned_canon_bullet = Instantiate(canon_bullet);
@@ -244,7 +244,7 @@ public class player_weapon : MonoBehaviour {
     }
 
     private int get_direction() {
-        if (transform.rotation.y == 180)
+        if (transform.rotation.y.Equals(180))
         {
             return -1;
         }

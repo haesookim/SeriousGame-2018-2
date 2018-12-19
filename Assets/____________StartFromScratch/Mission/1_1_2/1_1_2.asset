@@ -11,13 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92853b0023e2a9a469fdbb7f390e9e6b, type: 3}
   m_Name: 1_1_2
   m_EditorClassIdentifier: 
-  Mission_Name: "\uD3ED\uD0C4 \uD14C\uB7EC\uBC94"
-  Mission_Description_short: "\uD3ED\uD0C4 \uD14C\uB7EC\uBC94\uC744 \uC18C\uD0D5\uD558\uB77C!"
+  Mission_Name: "\uD3ED\uD0C4 \uD14C\uB7EC\uBC94\uC774 \uB098\uD0C0\uB0AC\uB2E4!"
+  Mission_Description_short: "\uD3ED\uD0C4\uD14C\uB7EC\uB85C\uBD80\uD130 \uB9C8\uC744\uC744
+    \uAD6C\uD558\uB77C!"
   Mission_Description_long: "\uD3ED\uD0C4 \uD14C\uB7EC\uBC94\uC774 \uC18C\uB780\uC744
     \uBC8C\uC774\uACE0 \uC788\uC5B4\uC694!"
-  Reward_DOM: 0
-  Reward_Reputation: 0
-  Reward_Money: 0
+  Reward_DOM: 18
+  Reward_Reputation: 6
+  Reward_Money: 200
   submissions:
   - {fileID: 11400000, guid: f4e4b7d699a7d7f42b599e55ec062d0a, type: 2}
   - {fileID: 11400000, guid: 66d1b85fab5382d4bb588923efbe2d05, type: 2}
