@@ -74,4 +74,8 @@ public class destructable : MonoBehaviour, Damageable
         DOM.UpdateDOM(DOM_amount);
         yield return null;
     }
+
+    public float GetCurrentHealth() {
+        return current_health;
+    }
 }

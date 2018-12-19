@@ -141,6 +141,7 @@ public class V4 : MonoBehaviour, Damageable {
             yield return null;
         }
         anim.SetTrigger("dead");
+        current_state = State.Dead;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         BoxCollider2D box_collider = this.GetComponent<BoxCollider2D>();
         box_collider.isTrigger = true;

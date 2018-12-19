@@ -3441,6 +3441,9 @@ MonoBehaviour:
   speed_walk: 5
   run_multiplier: 3
   jump_force: 40000
+  slum_position: {fileID: 0}
+  rich_position: {fileID: 0}
+  city_position: {fileID: 0}
 --- !u!114 &903043378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3544,72 +3547,74 @@ Transform:
   m_Father: {fileID: 257918387}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &924549750
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 924549751}
-  - component: {fileID: 924549752}
-  - component: {fileID: 924549753}
-  m_Layer: 0
-  m_Name: General Manager
-  m_TagString: GeneralManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &924549751
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 924549750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &924549752
+--- !u!114 &924549753 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 924549750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86ca6a230fe4b14caf2e90977e289ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maximum_DOM: 100
-  DOM_Image: {fileID: 1938574638}
-  money_text: {fileID: 2009593897}
-  Reputation:
-  - {fileID: 21300000, guid: 8491774ecdae34ab7953847c9e66dec2, type: 3}
-  - {fileID: 21300000, guid: 25c066b20b7df4b1095507abfefcb186, type: 3}
-  - {fileID: 21300000, guid: fb3bc4f756729454c9bf998d409702e0, type: 3}
-  - {fileID: 21300000, guid: 5ef5f2aa20d314f1baa97a46e17b9f9d, type: 3}
-  - {fileID: 21300000, guid: 834236a9c5e1a4447be56575524f5a95, type: 3}
-  Reputation_Display: {fileID: 123110647}
---- !u!114 &924549753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 924549750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114670345071489900, guid: aecedc847c09adf4491821a308050c1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 927164117}
   m_Script: {fileID: 11500000, guid: 0ad1587d2109a074e876a99e7a4de778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Day1:
-  - {fileID: 11400000, guid: 98090a8c14f90c54d890e636bd702527, type: 2}
-  Mission_Select: {fileID: 937696224}
-  current_submission: {fileID: 0}
+--- !u!1001 &927164117
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140113358465922, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114059161251578006, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: DOM_Image
+      value: 
+      objectReference: {fileID: 1938574638}
+    - target: {fileID: 114059161251578006, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: money_text
+      value: 
+      objectReference: {fileID: 2009593897}
+    - target: {fileID: 114059161251578006, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: Reputation_Display
+      value: 
+      objectReference: {fileID: 123110647}
+    - target: {fileID: 114670345071489900, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: Mission_Select
+      value: 
+      objectReference: {fileID: 937696224}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aecedc847c09adf4491821a308050c1a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &936275881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,15 +5389,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -101.28864
       objectReference: {fileID: 0}
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -18.239193
       objectReference: {fileID: 0}
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalRotation.x

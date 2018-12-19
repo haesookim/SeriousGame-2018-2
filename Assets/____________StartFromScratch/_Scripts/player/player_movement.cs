@@ -99,4 +99,22 @@ public class player_movement : MonoBehaviour {
             rb.AddForce(Vector2.up * jump_force);
         }
     }
+
+    //------------------------------[빈촌]
+    public Transform slum_position;
+    public void move_to_slum() {
+        this.transform.position = slum_position.position;
+    }
+    //------------------------------[부촌]
+    public Transform rich_position;
+    public void move_to_rich()
+    {
+        this.transform.position = rich_position.position;
+    }
+    //------------------------------[도시]
+    public Transform city_position;
+    public void move_to_city()
+    {
+        this.transform.position = city_position.position;
+    }
 }
