@@ -40,11 +40,13 @@ public class V2 : MonoBehaviour, Damageable {
         rb = this.GetComponent<Rigidbody2D>();
         //Villain Stats
         current_hp = maximum_hp;
-	}
+        gameObject.GetComponent<Villain_healthbar>().villain_Maximum_Hp = maximum_hp;
+    }
 	
 	void Update () {
         villain_pattern();
-	}
+        gameObject.GetComponent<Villain_healthbar>().villain_current_hp = current_hp;
+    }
 
     private void villain_pattern() {
         if (can_start_pattern) {
