@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class V1 : MonoBehaviour, Damageable
 {
@@ -21,7 +22,6 @@ public class V1 : MonoBehaviour, Damageable
     private Animator anim;
     private Rigidbody2D rb;
 
-
     private float current_hp;
 
     private enum State
@@ -37,6 +37,7 @@ public class V1 : MonoBehaviour, Damageable
 
     private bool can_start_pattern = true;
 
+
     void Start()
     {
         //Villain Components
@@ -44,6 +45,7 @@ public class V1 : MonoBehaviour, Damageable
         rb = this.GetComponent<Rigidbody2D>();
         //Villain Stats
         current_hp = maximum_hp;
+        gameObject.GetComponent<Villain_healthbar>().villain_Maximum_Hp = maximum_hp;
     }
 
     void Update()
@@ -62,6 +64,7 @@ public class V1 : MonoBehaviour, Damageable
                     break;
             }
         }
+        gameObject.GetComponent<Villain_healthbar>().villain_current_hp = current_hp;
     }
 
     public void TakeDamage(float damage)
@@ -126,7 +129,7 @@ public class V1 : MonoBehaviour, Damageable
     }
 
     private IEnumerator dead(){
-        while (!rb.velocity.y.Equals(0))
+        while (rb.velocity.y!=0)
         {
             yield return null;
         }

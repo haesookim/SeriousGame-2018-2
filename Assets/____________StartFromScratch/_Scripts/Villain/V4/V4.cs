@@ -45,6 +45,7 @@ public class V4 : MonoBehaviour, Damageable {
         current_hp = maximum_hp;
         anim = this.GetComponentInChildren<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
+        gameObject.GetComponent<Villain_healthbar>().villain_Maximum_Hp = maximum_hp;
     }
 
     void Update() {
@@ -63,6 +64,7 @@ public class V4 : MonoBehaviour, Damageable {
                     break;
             }
         }
+        gameObject.GetComponent<Villain_healthbar>().villain_current_hp = current_hp;
     }
 
     public void TakeDamage(float damage) {
