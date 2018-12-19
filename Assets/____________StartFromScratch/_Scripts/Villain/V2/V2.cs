@@ -18,12 +18,15 @@ public class V2 : MonoBehaviour, Damageable {
     
     //------------------------------[Villain Components]
     private Animator anim;
+    private Rigidbody2D rb;
+    
 
     private float current_hp;
 
     private enum State {
         Walk,
-        Charge
+        Charge,
+        Dead
     }
 
     private State current_state = State.Walk;
@@ -34,7 +37,7 @@ public class V2 : MonoBehaviour, Damageable {
     void Start () {
         //Villain Components
         anim = this.GetComponentInChildren<Animator>();
-
+        rb = this.GetComponent<Rigidbody2D>();
         //Villain Stats
         current_hp = maximum_hp;
 	}
@@ -60,8 +63,11 @@ public class V2 : MonoBehaviour, Damageable {
     public void TakeDamage(float damage)
     {
         current_hp -= damage;
-        if (current_hp < 0) {
-            //KILL VILLAIN
+        if (current_hp < 0 && current_state != State.Dead) {
+            current_state = State.Dead;
+            StopAllCoroutines();
+            StartCoroutine(dead());
+
             return;
         }
 
@@ -118,6 +124,17 @@ public class V2 : MonoBehaviour, Damageable {
         current_state = State.Walk;
         anim.SetBool("is_charging", false);
         can_damage = false;
+        yield return null;
+    }
+
+    private IEnumerator dead() {
+        while (rb.velocity.y != 0) {
+            yield return null;
+        }
+        anim.SetTrigger("die");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        BoxCollider2D box_collider = this.GetComponent<BoxCollider2D>();
+        box_collider.isTrigger = true;
         yield return null;
     }
 

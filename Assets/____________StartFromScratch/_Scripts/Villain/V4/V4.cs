@@ -25,6 +25,7 @@ public class V4 : MonoBehaviour, Damageable {
     private Animator anim;
     private float current_hp;
     private bool can_start_pattern = true;
+    private Rigidbody2D rb;
 
     [Header("Weapon")]
     public GameObject bullet;
@@ -34,18 +35,20 @@ public class V4 : MonoBehaviour, Damageable {
     {
         Walk,
         Shoot,
-        Idle
+        Idle,
+        Dead
     }
 
     private State current_state = State.Idle;
 
-    void Start () {
+    void Start() {
         current_hp = maximum_hp;
         anim = this.GetComponentInChildren<Animator>();
-	}
-	
-	void Update () {
-        
+        rb = this.GetComponent<Rigidbody2D>();
+    }
+
+    void Update() {
+
         if (can_start_pattern) {
             can_start_pattern = false;
             switch (current_state) {
@@ -60,14 +63,18 @@ public class V4 : MonoBehaviour, Damageable {
                     break;
             }
         }
-	}
+    }
 
     public void TakeDamage(float damage) {
         current_hp -= damage;
-        if (current_hp < 0) {
-            //DIE!
+        if (current_hp < 0 && current_state != State.Dead) {
+            current_state = State.Dead;
+            StopAllCoroutines();
+            StartCoroutine(dead());
+            check_mission();
             return;
         }
+        anim.SetTrigger("attacked");
 
     }
 
@@ -124,7 +131,29 @@ public class V4 : MonoBehaviour, Damageable {
         yield return null;
     }
 
+    private IEnumerator dead() {
+        while (rb.velocity.y != 0)
+        {
+            yield return null;
+        }
+        anim.SetTrigger("dead");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        BoxCollider2D box_collider = this.GetComponent<BoxCollider2D>();
+        box_collider.isTrigger = true;
+        yield return null;
+    }
+
     private State next_state() {
         return (State)Random.Range(0, 3);
+    }
+
+    private void check_mission() {
+        Missions mission_manager = GameObject.FindGameObjectWithTag("GeneralManager").GetComponent<Missions>();
+        if (mission_manager.current_submission == null) return;
+        if (mission_manager.current_submission.kill_mission && mission_manager.current_submission.name_to_kill == this.gameObject.name) {
+            mission_manager.current_submission.killAmount_progress++;
+            Debug.Log("increased");
+        }
+        
     }
 }

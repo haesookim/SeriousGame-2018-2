@@ -62,5 +62,14 @@ public class V4_bullet : MonoBehaviour {
         yield return null;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player") {
+            player_stats player = collision.transform.GetComponent<player_stats>();
+            StartCoroutine(explode());
+            return;
+        }
+    }
+
 
 }

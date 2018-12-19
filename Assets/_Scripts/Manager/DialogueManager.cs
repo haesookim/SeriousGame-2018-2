@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour {
         {
             if(current_line != -1)
                 dialogue_box.text = dialogue[current_line];
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.V))
             {
                 current_line++;
             }

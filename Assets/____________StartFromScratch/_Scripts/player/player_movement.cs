@@ -51,7 +51,11 @@ public class player_movement : MonoBehaviour {
     }
 
     void Update () {
-        if (!can_move) return;
+        if (!can_move) {
+            speed_movement = 0;
+            return;
+        }
+        
         movement();
         jump();
 	}
