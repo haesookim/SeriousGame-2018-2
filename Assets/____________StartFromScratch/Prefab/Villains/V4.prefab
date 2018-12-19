@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3182c6559bc474586873bd282ffbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximum_hp: 100
+  maximum_hp: 130
   attack_damage: 10
   bullet_force: 1000
-  bullet_damage: 10
+  bullet_damage: 30
   bullet_radius: 5
   bullet_time: 3
   walk_time: 3

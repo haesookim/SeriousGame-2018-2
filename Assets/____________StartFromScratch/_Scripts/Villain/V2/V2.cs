@@ -147,4 +147,16 @@ public class V2 : MonoBehaviour, Damageable {
             player.TakeDamage(attack_damage);
         }
     }
+
+    private void check_mission()
+    {
+        Missions mission_manager = GameObject.FindGameObjectWithTag("GeneralManager").GetComponent<Missions>();
+        if (mission_manager.current_submission == null) return;
+        if (mission_manager.current_submission.kill_mission && mission_manager.current_submission.name_to_kill == this.gameObject.name)
+        {
+            mission_manager.current_submission.killAmount_progress++;
+            Debug.Log("increased");
+        }
+
+    }
 }

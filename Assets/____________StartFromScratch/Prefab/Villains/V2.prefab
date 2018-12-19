@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7bfe63abde3b1419bdd48272e9d651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximum_hp: 100
-  attack_damage: 10
+  maximum_hp: 120
+  attack_damage: 20
   charge_speed: 10
   charge_time: 1
   walk_time: 3
