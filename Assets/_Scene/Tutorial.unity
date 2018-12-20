@@ -3399,7 +3399,7 @@ GameObject:
   - component: {fileID: 1108457612}
   - component: {fileID: 1108457613}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Tutorial_spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3431,7 +3431,17 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 114072207960376320, guid: 64665b26fa4a73a479da428c7e9ffae2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114474050058766974, guid: 64665b26fa4a73a479da428c7e9ffae2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114972516370768870, guid: 64665b26fa4a73a479da428c7e9ffae2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114788433388156878, guid: 64665b26fa4a73a479da428c7e9ffae2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114178384575747920, guid: 64665b26fa4a73a479da428c7e9ffae2, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1121243731
