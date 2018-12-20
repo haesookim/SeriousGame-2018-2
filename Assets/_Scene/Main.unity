@@ -2977,6 +2977,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114670345071489900, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: Day2.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c82dd10f9de1cb24d9af68256269bc94,
+        type: 2}
+    - target: {fileID: 114670345071489900, guid: aecedc847c09adf4491821a308050c1a,
+        type: 2}
+      propertyPath: Day2.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 92eac8b1312610240b2f9549f08f6f03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aecedc847c09adf4491821a308050c1a, type: 2}
   m_IsPrefabAsset: 0
@@ -3838,7 +3850,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 252593eaddc324eca8bccdcd038947f3, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 3
@@ -3864,11 +3876,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 194.43982
+      value: 193.5
       objectReference: {fileID: 0}
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16.012848
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 4123087424378320, guid: 74e5bb13dd1cdd84c9c2f1c29a3e3db0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4825,7 +4837,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 252593eaddc324eca8bccdcd038947f3, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 3

@@ -48,7 +48,7 @@ public class Days : MonoBehaviour {
         timeline.Play();
 
         //Remove all the corpses
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enenmy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies) {
             Destroy(enemy);
         }

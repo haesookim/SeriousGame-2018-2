@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
+  m_Name: 2_1_1-1
+  m_EditorClassIdentifier: 
+  submission_name: 
+  submission_description: 
+  chat_mission: 1
+  name_to_talk: n2_1_1
+  lines:
+  - "\uC2DC\uBBFC: \uADF8\uB798\uC694. \uC800\uB294 \uAC70\uC9C0\uC5D0\uC694. \uC9D1\uB3C4
+    \uC5C6\uACE0 \uAC00\uC9C4 \uAC83\uB3C4 \uC5C6\uC5B4\uC694."
+  - "\uC2DC\uBBFC: \uADF8\uB798\uB3C4 \uAD6C\uAC78\uC774\uB77C\uB3C4 \uD574\uC57C
+    \uC800\uC640 \uAC00\uC871\uB4E4\uC774 \uAD76\uC5B4\uC8FD\uC9C0 \uC54A\uC744 \uC218
+    \uC788\uB294\uB370\u2026 \uC790\uAE30 \uAD6C\uC5ED\uC774\uB77C\uACE0 \uBAB0\uB824\uC640\uC11C
+    \uC800\uB97C \uB450\uB4DC\uB824\uD33C\uC5B4\uC694."
+  - "\uC2DC\uBBFC: \"\uB108\uBB34 \uC5B5\uC6B8\uD558\uACE0 \uBB34\uC11C\uC6CC\uC694
+    \uD788\uC5B4\uB85C\uB2D8. \uB3C4\uC640\uC8FC\uC138\uC694!"
+  kill_mission: 0
+  names_to_kill: []
+  killAmounts: 
+  progresses: 
+  to_spawn_objs: []
+  set_position_manual: 0
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
+  is_complete: 0

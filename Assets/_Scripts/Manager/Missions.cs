@@ -48,7 +48,6 @@ public class Missions : MonoBehaviour {
         if (current_mission == null) return;
 
         if (current_index >= current_mission.submissions.Length) {
-            Debug.Log("Next Time");
             current_mission.complete();
             stat.UpdateAll(current_mission.Reward_DOM, current_mission.Reward_Reputation, current_mission.Reward_Money);
             day.Increase_Time();
@@ -77,6 +76,27 @@ public class Missions : MonoBehaviour {
         Mission_Box_1.SetActive(true);
         Mission_Box_2.SetActive(true);
 
+        //If it's a core mission, then Start Mission immediately
+        if (Daily_Missions[day][0 + time * 2].is_core_mission && !Daily_Missions[day][0 + time * 2].is_initialized) {
+            current_mission = Daily_Missions[day][0 + time * 2];
+            current_mission.initialize();
+            GameObject player = GameObject.Find("Player");
+            player_movement player_movement = player.GetComponent<player_movement>();
+            switch (current_mission.Mission_Area) {
+                case "City":
+                    player_movement.move_to_city();
+                    break;
+                case "Slum":
+                    player_movement.move_to_slum();
+                    break;
+                case "Rich":
+                    player_movement.move_to_rich();
+                    break;
+            }
+            return;
+        }
+
+
         if (Daily_Missions[day][0 + time * 2] != null)
             set_mission_box(Daily_Missions[day][0 + time * 2], Mission_Box_1);
         else
@@ -96,7 +116,7 @@ public class Missions : MonoBehaviour {
         Text description = Mission_Box.transform.GetChild(1).GetComponent<Text>();
 
         title.text = mission.Mission_Name;
-        //description.text = mission.Mission_Name;
+        description.text = "DOM: " + mission.Reward_DOM + " Reputation: " + mission.Reward_Reputation + " Money: " + mission.Reward_Money;
     }
 
     public void Start_Mission1() {

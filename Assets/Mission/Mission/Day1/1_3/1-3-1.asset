@@ -16,13 +16,20 @@ MonoBehaviour:
   chat_mission: 0
   name_to_talk: 
   lines: []
-  kill_mission: 0
-  name_to_kill: 
-  killAmount: 0
-  killAmount_progress: 0
-  to_spawn: {fileID: 0}
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
+  kill_mission: 1
+  names_to_kill:
+  - 
+  - 
+  - 
+  killAmounts: 030000000100000001000000
+  progresses: 000000000000000000000000
+  to_spawn_objs:
+  - {fileID: 1988254949769268, guid: 4e18e48ffd9e2b9419b53ae02f00b93e, type: 2}
+  - {fileID: 1092686265290048, guid: da2892bb699bef848890aaa300d9a2a3, type: 2}
+  - {fileID: 1448480597411360, guid: cc18caf712dbf4736ba0673d40a3c052, type: 2}
+  set_position_manual: 0
+  minX: 181
+  maxX: 300
+  minY: -21
+  maxY: -12
   is_complete: 0

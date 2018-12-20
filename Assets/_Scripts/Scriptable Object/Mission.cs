@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Mission", menuName = "Mission")]
 public class Mission : ScriptableObject {
     public string Mission_Name;
+    public string Mission_Area;
     public float Reward_DOM;
     public float Reward_Reputation;
     public float Reward_Money;
@@ -17,7 +18,9 @@ public class Mission : ScriptableObject {
     public bool is_core_mission;
 
     public void initialize() {
-        if (is_core_mission) return;
+        if (is_core_mission) {
+            is_initialized = true; return;
+        }
         NPC = GameObject.Find("n" + this.name);
         NPC.SetActive(false);
     }
