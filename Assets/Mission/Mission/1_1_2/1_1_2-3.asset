@@ -14,7 +14,7 @@ MonoBehaviour:
   submission_name: "\uAC10\uC0AC \uC778\uC0AC"
   submission_description: "\uC2DC\uBBFC\uACFC \uB300\uD654\uD558\uB77C"
   chat_mission: 1
-  name_to_talk: n3
+  name_to_talk: n1_2_1
   lines:
   - "\uC2DC\uBBFC: \"\uC800\uAE30 \uC774\uC81C\uC57C \uACBD\uCC30\uC774 \uC624\uB124\uC694!
     \uC800 \uD14C\uB7EC\uBC94\uC744 \uC7A1\uC73C\uB7EC \uC654\uB098 \uBD10\uC694.\""
@@ -29,4 +29,4 @@ MonoBehaviour:
   maxX: 0
   minY: 0
   maxY: 0
-  is_complete: 1
+  is_complete: 0

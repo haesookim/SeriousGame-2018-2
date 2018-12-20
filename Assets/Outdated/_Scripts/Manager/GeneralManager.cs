@@ -40,7 +40,7 @@ public class GeneralManager : MonoBehaviour {
         else if (current_submission.kill_mission)
         {
             submission_description.text = current_submission.submission_description
-                + ":  (" + current_submission.killAmount_progress + " / " + current_submission.killAmount + ")";
+                + ":  (" + current_submission.progresses[0] + " / " + current_submission.progresses[0] + ")";
         }
 
 

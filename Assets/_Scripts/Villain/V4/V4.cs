@@ -50,7 +50,7 @@ public class V4 : MonoBehaviour, Damageable {
 
     void Update() {
 
-        if (can_start_pattern) {
+        if (can_start_pattern && current_state != State.Dead) {
             can_start_pattern = false;
             switch (current_state) {
                 case State.Idle:
@@ -73,8 +73,8 @@ public class V4 : MonoBehaviour, Damageable {
         {
             current_state = State.Dead;
             StopAllCoroutines();
-            StartCoroutine(dead());
             check_mission();
+            StartCoroutine(dead());
             return;
         }
         else if (current_state != State.Dead) {
@@ -152,13 +152,25 @@ public class V4 : MonoBehaviour, Damageable {
         return (State)Random.Range(0, 3);
     }
 
-    private void check_mission() {
+    private void check_mission()
+    {
         Missions mission_manager = GameObject.FindGameObjectWithTag("GeneralManager").GetComponent<Missions>();
         if (mission_manager.current_submission == null) return;
-        if (mission_manager.current_submission.kill_mission && mission_manager.current_submission.name_to_kill == this.gameObject.name) {
-            mission_manager.current_submission.killAmount_progress++;
-            Debug.Log("increased");
+        SubMission current_submission = mission_manager.current_submission;
+        if (current_submission.kill_mission)
+        {
+            int index = -1;
+            for (int i = 0; i < current_submission.names_to_kill.Length; i++)
+            {
+                if (current_submission.names_to_kill[i] == this.gameObject.name)
+                {
+                    index = i;
+                }
+            }
+
+            if (index == -1) return;
+
+            current_submission.progresses[index]++;
         }
-        
     }
 }

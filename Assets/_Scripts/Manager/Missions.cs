@@ -49,18 +49,18 @@ public class Missions : MonoBehaviour {
     private void set_mission_box(Mission mission, GameObject Mission_Box) {
         Text title = Mission_Box.transform.GetChild(0).GetComponent<Text>();
         Text description = Mission_Box.transform.GetChild(1).GetComponent<Text>();
-        Text subtitle = Mission_Box.transform.GetChild(2).GetComponent<Text>();
 
         title.text = mission.Mission_Name;
-        description.text = mission.Mission_Description_long;
-        subtitle.text = mission.Mission_Description_short;
+        //description.text = mission.Mission_Name;
     }
 
     public void Start_Mission1() {
         current_mission = Daily_Missions[0][0];
     }
 
-    public void Start_Mission2() {
+    public void Start_Mission() {
+        if (current_mission != null) return;
 
+        //Load Mission
     }
 }

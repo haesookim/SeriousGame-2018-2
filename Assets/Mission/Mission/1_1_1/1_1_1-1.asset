@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
   m_Name: 1_1_1-1
   m_EditorClassIdentifier: 
-  submission_name: 
+  submission_name: "\uC2DC\uBBFC\uACFC \uB300\uD654\uD558\uAE30"
   submission_description: 
   chat_mission: 1
-  name_to_talk: 
+  name_to_talk: n1_1_1
   lines:
   - "\uC2DC\uBBFC: \"\uC138\uC0C1\uC5D0. \uD788\uC5B4\uB85C\uB2D8\uC774\uC138\uC694?
     \uC6B0\uB9AC\uB97C \uB3C4\uC640\uC8FC\uB7EC \uC640\uC8FC\uC154\uC11C \uB108\uBB34
@@ -25,10 +25,10 @@ MonoBehaviour:
     \uB2E4 \uB0B4\uB193\uC73C\uB77C\uACE0 \uD558\uACE0, \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74
     \uC774\uAC83\uC800\uAC83 \uB9C8\uAD6C \uD6D4\uCE58\uACE0 \uBD80\uC218\uACE0 \uC788\uC5B4\uC694!\""
   kill_mission: 0
-  name_to_kill: 
-  killAmount: 0
-  killAmount_progress: 0
-  to_spawn: {fileID: 0}
+  names_to_kill: []
+  killAmounts: 
+  progresses: 
+  to_spawn_objs: []
   minX: 0
   maxX: 0
   minY: 0

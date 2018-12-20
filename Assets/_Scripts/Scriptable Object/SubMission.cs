@@ -14,10 +14,10 @@ public class SubMission : ScriptableObject
     DialogueTrigger DT;
 
     public bool kill_mission;
-    public string name_to_kill;
-    public int killAmount;
-    public int killAmount_progress;
-    public GameObject to_spawn;
+    public string[] names_to_kill;
+    public int[] killAmounts;
+    public int[] progresses;
+    public GameObject[] to_spawn_objs;
     public float minX, maxX;
     public float minY, maxY;
 
@@ -27,7 +27,7 @@ public class SubMission : ScriptableObject
     public void Initialize_SubMission()
     {
         is_complete = false;
-        killAmount_progress = 0;
+
         if (chat_mission)
         {
             GameObject to_talk = GameObject.Find(name_to_talk);
@@ -37,13 +37,19 @@ public class SubMission : ScriptableObject
         }
         if (kill_mission)
         {
-            for(int i = 0; i < killAmount; i++)
+            //Reset Progress
+            for (int i = 0; i < progresses.Length; i++)
             {
-                float xPos = Random.Range(minX, maxX);
-                float yPos = Random.Range(minY, maxY);
-                Instantiate(to_spawn, new Vector2(xPos, yPos), Quaternion.identity);
+                progresses[i] = 0;
             }
-            
+            for (int i = 0; i < killAmounts.Length; i++) {
+                for (int j = 0; j < killAmounts[i]; j++) {
+                    float xPos = Random.Range(minX, maxX);
+                    float yPos = Random.Range(minY, maxY);
+                    GameObject spawned_obj = Instantiate(to_spawn_objs[i], new Vector2(xPos, yPos), Quaternion.identity);
+                    spawned_obj.name = to_spawn_objs[i].name;
+                }
+            }
         }
     }
     public void Check_Progress()
@@ -62,10 +68,12 @@ public class SubMission : ScriptableObject
         }
         if (kill_mission)
         {
-            if(killAmount_progress >= killAmount)
-            {
-                is_complete = true;
+            for (int i = 0; i < progresses.Length; i++) {
+                if (progresses[i] < killAmounts[i]) {
+                    return;
+                }
             }
+            is_complete = true;
         }
     }
 }

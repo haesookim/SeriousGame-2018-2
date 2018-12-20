@@ -30,7 +30,5 @@ public class DialogueTrigger : MonoBehaviour {
                 hasQuest = false;
             }
         }
-        
-        
     }
 }

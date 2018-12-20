@@ -11,16 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
   m_Name: 1_1_1-2
   m_EditorClassIdentifier: 
-  submission_name: 
+  submission_name: "\uD3ED\uB825\uBC30\uB97C \uBB34\uCC14\uB7EC\uB77C"
   submission_description: 
   chat_mission: 0
   name_to_talk: 
   lines: []
-  kill_mission: 0
-  name_to_kill: 
-  killAmount: 0
-  killAmount_progress: 0
-  to_spawn: {fileID: 0}
+  kill_mission: 1
+  names_to_kill:
+  - V4
+  - V2
+  killAmounts: 0200000001000000
+  progresses: 0000000000000000
+  to_spawn_objs:
+  - {fileID: 1092686265290048, guid: da2892bb699bef848890aaa300d9a2a3, type: 2}
+  - {fileID: 1988254949769268, guid: 4e18e48ffd9e2b9419b53ae02f00b93e, type: 2}
   minX: 0
   maxX: 0
   minY: 0

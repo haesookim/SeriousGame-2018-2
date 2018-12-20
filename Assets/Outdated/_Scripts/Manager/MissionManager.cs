@@ -62,7 +62,6 @@ public class MissionManager : MonoBehaviour {
 
         //mission_image
         mission_name.text = mission.Mission_Name;
-        mission_description.text = mission.Mission_Description_short;
         mission_rewardDom.text = "DOM: " + mission.Reward_DOM;
         mission_rewardMoney.text = "Money: " + mission.Reward_Money;
         mission_rewardReputation.text = "Reputation: " + mission.Reward_Reputation;

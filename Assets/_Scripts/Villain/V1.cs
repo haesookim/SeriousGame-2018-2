@@ -143,11 +143,22 @@ public class V1 : MonoBehaviour, Damageable
     private void check_mission() {
         Missions mission_manager = GameObject.FindGameObjectWithTag("GeneralManager").GetComponent<Missions>();
         if (mission_manager.current_submission == null) return;
-        if (mission_manager.current_submission.kill_mission && mission_manager.current_submission.name_to_kill == this.gameObject.name) {
-            mission_manager.current_submission.killAmount_progress++;
-            Debug.Log("increased");
+        SubMission current_submission = mission_manager.current_submission;
+        if (current_submission.kill_mission)
+        {
+            int index = -1;
+            for (int i = 0; i < current_submission.names_to_kill.Length; i++)
+            {
+                if (current_submission.names_to_kill[i] == this.gameObject.name)
+                {
+                    index = i;
+                }
+            }
+
+            if (index == -1) return;
+
+            current_submission.progresses[index]++;
         }
-        
     }
 
     private State next_state()
