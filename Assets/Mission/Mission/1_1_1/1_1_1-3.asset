@@ -11,21 +11,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
   m_Name: 1_1_1-3
   m_EditorClassIdentifier: 
-  submission_name: 
+  submission_name: "\uAC10\uC0AC\uC778\uC0AC"
   submission_description: 
   chat_mission: 1
-  name_to_talk: 
+  name_to_talk: n1_1_1
   lines:
   - "\uC2DC\uBBFC: \"\uC800\uD76C\uB97C \uB3C4\uC640\uC8FC\uB294 \uAC74 \uD788\uC5B4\uB85C\uB2D8
     \uBFD0\uC774\uC5D0\uC694. \uC815\uB9D0 \uAC10\uC0AC\uB4DC\uB9BD\uB2C8\uB2E4.\""
   - "\uC2DC\uBBFC: \"\uB355\uBD84\uC5D0 \uC774\uC81C \uD55C \uC2DC\uB984 \uB193\uC558\uC5B4\uC694.\""
   kill_mission: 0
-  name_to_kill: 
-  killAmount: 0
-  killAmount_progress: 0
-  to_spawn: {fileID: 0}
+  names_to_kill: []
+  killAmounts: 
+  progresses: 
+  to_spawn_objs: []
   minX: 0
   maxX: 0
   minY: 0
   maxY: 0
-  is_complete: 0
+  is_complete: 1

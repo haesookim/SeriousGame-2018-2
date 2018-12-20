@@ -17,10 +17,12 @@ MonoBehaviour:
   name_to_talk: 
   lines: []
   kill_mission: 1
-  name_to_kill: V4
-  killAmount: 1
-  killAmount_progress: 1
-  to_spawn: {fileID: 1092686265290048, guid: da2892bb699bef848890aaa300d9a2a3, type: 2}
+  names_to_kill:
+  - V4
+  killAmounts: 01000000
+  progresses: 00000000
+  to_spawn_objs:
+  - {fileID: 1092686265290048, guid: da2892bb699bef848890aaa300d9a2a3, type: 2}
   minX: 96.39
   maxX: 96.39
   minY: -2

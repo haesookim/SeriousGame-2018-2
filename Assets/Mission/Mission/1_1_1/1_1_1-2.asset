@@ -25,8 +25,8 @@ MonoBehaviour:
   to_spawn_objs:
   - {fileID: 1092686265290048, guid: da2892bb699bef848890aaa300d9a2a3, type: 2}
   - {fileID: 1988254949769268, guid: 4e18e48ffd9e2b9419b53ae02f00b93e, type: 2}
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
+  minX: 184
+  maxX: 295.2
+  minY: -20
+  maxY: -8.4
   is_complete: 0
