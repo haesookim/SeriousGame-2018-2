@@ -8,6 +8,7 @@ public class Missions : MonoBehaviour {
     private List<Mission[]> Daily_Missions = new List<Mission[]>();
 
     public Mission[] Day1;
+    
 
     public GameObject Mission_Select;
 

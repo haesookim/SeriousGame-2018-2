@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92853b0023e2a9a469fdbb7f390e9e6b, type: 3}
+  m_Name: 1_4_1
+  m_EditorClassIdentifier: 
+  Mission_Name: "\uC2DC\uB0B4 \uC2DC\uCCAD \uC55E \uB09C\uB3D9"
+  Reward_DOM: 10
+  Reward_Reputation: 23
+  Reward_Money: 0
+  submissions:
+  - {fileID: 11400000, guid: 6bec0ec6b810c884a83c0185b8f60af4, type: 2}
+  - {fileID: 11400000, guid: 1ea2d3b8b71a02b49be144f372f8108b, type: 2}
+  - {fileID: 11400000, guid: 4a13c94dc03f53e4e9e32ee3d4d0d733, type: 2}

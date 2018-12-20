@@ -18,9 +18,10 @@ public class SubMission : ScriptableObject
     public int[] killAmounts;
     public int[] progresses;
     public GameObject[] to_spawn_objs;
+    public bool set_position_manual;
     public float minX, maxX;
     public float minY, maxY;
-
+    
     public bool is_complete = false;
 
 

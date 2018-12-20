@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85caa16a572a59646aabe05a91fae12f, type: 3}
+  m_Name: 1_2_2-2
+  m_EditorClassIdentifier: 
+  submission_name: 
+  submission_description: 
+  chat_mission: 0
+  name_to_talk: 
+  lines: []
+  kill_mission: 1
+  names_to_kill:
+  - 
+  - 
+  killAmounts: 0200000001000000
+  progresses: 0000000000000000
+  to_spawn_objs:
+  - {fileID: 0}
+  - {fileID: 0}
+  set_position_manual: 0
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
+  is_complete: 0
