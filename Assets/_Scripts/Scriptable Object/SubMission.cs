@@ -49,6 +49,7 @@ public class SubMission : ScriptableObject
                     float yPos = Random.Range(minY, maxY);
                     GameObject spawned_obj = Instantiate(to_spawn_objs[i], new Vector2(xPos, yPos), Quaternion.identity);
                     spawned_obj.name = to_spawn_objs[i].name;
+                    names_to_kill[i] = to_spawn_objs[i].name;
                 }
             }
         }

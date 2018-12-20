@@ -73,8 +73,8 @@ public class V4 : MonoBehaviour, Damageable {
         {
             current_state = State.Dead;
             StopAllCoroutines();
-            check_mission();
             StartCoroutine(dead());
+            
             return;
         }
         else if (current_state != State.Dead) {
@@ -145,6 +145,7 @@ public class V4 : MonoBehaviour, Damageable {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         BoxCollider2D box_collider = this.GetComponent<BoxCollider2D>();
         box_collider.isTrigger = true;
+        check_mission();
         yield return null;
     }
 

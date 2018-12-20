@@ -10,4 +10,27 @@ public class Mission : ScriptableObject {
     public float Reward_Money;
 
     public SubMission[] submissions;
+
+    public bool is_initialized;
+    private GameObject NPC;
+
+    public bool is_core_mission;
+
+    public void initialize() {
+        if (is_core_mission) return;
+        NPC = GameObject.Find("n" + this.name);
+        NPC.SetActive(false);
+    }
+    public void initialize_mission() {
+        is_initialized = true;
+        if (is_core_mission) return;
+        NPC.SetActive(true);
+        
+    }
+    public void complete() {
+        is_initialized = false;
+        if (is_core_mission) return;
+        NPC.SetActive(false);
+        
+    }
 }

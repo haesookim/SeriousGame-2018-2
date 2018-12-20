@@ -29,12 +29,26 @@ public class Stats : MonoBehaviour {
     private void Update()
     {
         money_text.text = current_Money.ToString();
-        set_reputation(current_reputation); 
+    }
+
+    public void UpdateAll(float DOM, float reputation, float money) {
+        UpdateDOM(DOM);
+        UpdateReputation(reputation);
+        UpdateMoney(money);
     }
 
     public void UpdateDOM(float amount) {
         current_DOM += amount;
         DOM_Image.fillAmount = current_DOM / maximum_DOM;
+    }
+
+    public void UpdateReputation(float amount) {
+        current_reputation += amount;
+        set_reputation(current_reputation);
+    }
+
+    public void UpdateMoney(float amount) {
+        current_Money += amount;
     }
 
     private void set_reputation(float reputation) {
@@ -62,5 +76,9 @@ public class Stats : MonoBehaviour {
             Reputation_Display.sprite = Reputation[4];
             return;
         }
+    }
+
+    public float Get_Reputation() {
+        return current_reputation;
     }
 }

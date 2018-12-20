@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Name: 1_2_1
   m_EditorClassIdentifier: 
   Mission_Name: "\uC554\uC0B4\uC2DC\uB3C4\uBC94\uC744 \uCC3E\uC544\uB0B4\uC790"
-  Mission_Description_short: "\uD3C9\uD654\uB86D\uB358 \uB9C8\uC744\uC5D0 \uC0B4\uC778\uC608\uACE0\uB77C\uB2C8...?"
-  Mission_Description_long: "\uB204\uAD70\uAC00\uAC00 \uC800\uB97C \uC8FD\uC774\uB824\uACE0
-    \uD574\uC694..."
   Reward_DOM: 13
   Reward_Reputation: -17
   Reward_Money: 300
-  submissions: []
+  submissions:
+  - {fileID: 11400000, guid: f3cdc9ad23d6b4cb787c408f0772be53, type: 2}
+  - {fileID: 11400000, guid: 6f4c4738416d8471da6c02f7106a94aa, type: 2}
+  - {fileID: 11400000, guid: 8db0ccd96ee274c84a0672b66e423b64, type: 2}
+  is_initialized: 0
+  is_core_mission: 0

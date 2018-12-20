@@ -16,7 +16,7 @@ public class StartMenu : MonoBehaviour {
 
     public void StartGame()
     {
-        StartCoroutine(StartGame_Coroutine());
+        SceneManager.LoadScene("Tutorial");
     }
 
     private IEnumerator StartGame_Coroutine()
