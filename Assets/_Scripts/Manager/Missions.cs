@@ -43,7 +43,7 @@ public class Missions : MonoBehaviour {
         GameObject Mission_Box_2 = Mission_Select.transform.GetChild(1).gameObject;
 
         set_mission_box(Daily_Missions[day][0], Mission_Box_1);
-        //set_mission_box(Daily_Missions[day][1], Mission_Box_2);
+        set_mission_box(Daily_Missions[day][1], Mission_Box_2);
     }
 
     private void set_mission_box(Mission mission, GameObject Mission_Box) {
@@ -58,9 +58,7 @@ public class Missions : MonoBehaviour {
         current_mission = Daily_Missions[0][0];
     }
 
-    public void Start_Mission() {
-        if (current_mission != null) return;
-
-        //Load Mission
+    public void Start_Mission2() {
+        current_mission = Daily_Missions[0][1];
     }
 }

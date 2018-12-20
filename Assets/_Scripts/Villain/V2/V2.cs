@@ -68,8 +68,8 @@ public class V2 : MonoBehaviour, Damageable {
         if (current_hp < 0 && current_state != State.Dead) {
             current_state = State.Dead;
             StopAllCoroutines();
+            check_mission();
             StartCoroutine(dead());
-
             return;
         }
 
