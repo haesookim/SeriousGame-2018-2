@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour {
     private DialogueManager DM;
     private GeneralManager GM;
 
-    public bool hasQuest = true;
+    public bool hasQuest = false;
 
     private void Awake()
     {
@@ -29,6 +29,16 @@ public class DialogueTrigger : MonoBehaviour {
                 DM.OpenDialogue(lines);
                 hasQuest = false;
             }
+            questMark.SetActive(true);
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            questMark.SetActive(false);
         }
     }
 }

@@ -39,6 +39,7 @@ public class Stats : MonoBehaviour {
 
     public void UpdateDOM(float amount) {
         current_DOM += amount;
+        Debug.Log(amount);
         DOM_Image.fillAmount = current_DOM / maximum_DOM;
     }
 

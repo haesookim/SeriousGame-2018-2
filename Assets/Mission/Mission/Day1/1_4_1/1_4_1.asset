@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: 1_4_1
   m_EditorClassIdentifier: 
   Mission_Name: "\uC2DC\uB0B4 \uC2DC\uCCAD \uC55E \uB09C\uB3D9"
+  Mission_Area: 
   Reward_DOM: 10
   Reward_Reputation: 23
   Reward_Money: 0
@@ -19,3 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6bec0ec6b810c884a83c0185b8f60af4, type: 2}
   - {fileID: 11400000, guid: 1ea2d3b8b71a02b49be144f372f8108b, type: 2}
   - {fileID: 11400000, guid: 4a13c94dc03f53e4e9e32ee3d4d0d733, type: 2}
+  is_initialized: 0
+  NPC: {fileID: 1120664874419298, guid: afb534fc005e14773bcf32f8c8960e03, type: 2}
+  is_core_mission: 0

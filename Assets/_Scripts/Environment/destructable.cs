@@ -5,10 +5,11 @@ using UnityEngine;
 public class destructable : MonoBehaviour, Damageable
 {
 
-    [SerializeField] private float maximum_health;
-    [SerializeField] private float DOM_amount;
+    [SerializeField] float maximum_health = 200;
+    [SerializeField] float DOM_amount = 10;
 
     public enum Type {
+        City,
         Rich_Town,
         Slum,
         None

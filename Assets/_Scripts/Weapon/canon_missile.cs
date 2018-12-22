@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class canon_missile : MonoBehaviour {
 
-    private float damage;
-    private float radius;
+    private float damage= 40;
+    private float radius = 3;
 
     public void Set_Canon(float damage, float radius) {
         this.damage = damage;

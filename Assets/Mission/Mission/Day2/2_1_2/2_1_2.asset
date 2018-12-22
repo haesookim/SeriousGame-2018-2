@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92853b0023e2a9a469fdbb7f390e9e6b, type: 3}
   m_Name: 2_1_2
   m_EditorClassIdentifier: 
-  Mission_Name: "\uB204\uAD70\uAC00\uAC00 \uACBD\uCC30\uC11C\uC5D0\uC11C \uBE44\uBC00
-    \uBB38\uC11C\uB97C \uBE7C\uB3CC\uB838\uC5B4\uC694! \uC7A0\uC544\uC57C\uD574\uC694!"
+  Mission_Name: "\uC2DC\uB0B4 \uACBD\uCC30\uC11C\uC5D0\uC11C \uBE44\uBC00 \uBB38\uC11C\uB97C
+    \uB3C4\uB451\uB9DE\uC558\uC5B4\uC694!"
   Mission_Area: 
   Reward_DOM: 11
   Reward_Reputation: 20
@@ -22,4 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28812fabfba19ca4bb22103e40c64a5e, type: 2}
   - {fileID: 11400000, guid: 33aecbe699278f24aa360e8de0a27691, type: 2}
   is_initialized: 0
+  NPC: {fileID: 0}
   is_core_mission: 0

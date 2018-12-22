@@ -69,6 +69,7 @@ public class player_weapon : MonoBehaviour {
                     flame.GetComponent<ParticleSystem>().Play();
                     break;
                 case 3:
+                    player_movement.Can_Move = true;
                     StartCoroutine(canon_shoot());
                     break;
             }
@@ -210,7 +211,7 @@ public class player_weapon : MonoBehaviour {
 
     //------------------------------[Canon]
     [Header("Canon")]
-    public GameObject boundary;
+    //public GameObject boundary;
     public GameObject canon_bullet;
     public Transform canon_point_shoot;
     public float canon_power;
@@ -222,7 +223,7 @@ public class player_weapon : MonoBehaviour {
 
         GameObject spawned_canon_bullet = Instantiate(canon_bullet);
         Physics2D.IgnoreCollision(this.transform.GetComponent<BoxCollider2D>(), spawned_canon_bullet.GetComponent<CircleCollider2D>());
-        Physics2D.IgnoreCollision(boundary.GetComponent<PolygonCollider2D>(), spawned_canon_bullet.GetComponent<CircleCollider2D>());
+        //Physics2D.IgnoreCollision(boundary.GetComponent<PolygonCollider2D>(), spawned_canon_bullet.GetComponent<CircleCollider2D>());
         
         spawned_canon_bullet.transform.SetParent(null);
         spawned_canon_bullet.transform.position = canon_point_shoot.position;

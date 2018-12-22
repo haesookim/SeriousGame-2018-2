@@ -13,7 +13,7 @@ public class Mission : ScriptableObject {
     public SubMission[] submissions;
 
     public bool is_initialized;
-    private GameObject NPC;
+    public GameObject NPC;
 
     public bool is_core_mission;
 
@@ -28,12 +28,14 @@ public class Mission : ScriptableObject {
         is_initialized = true;
         if (is_core_mission) return;
         NPC.SetActive(true);
-        
+        NPC.GetComponent<DialogueTrigger>().hasQuest = true;
+
     }
     public void complete() {
         is_initialized = false;
         if (is_core_mission) return;
         NPC.SetActive(false);
-        
+        NPC.GetComponent<DialogueTrigger>().hasQuest = false;
+
     }
 }

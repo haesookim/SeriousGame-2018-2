@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92853b0023e2a9a469fdbb7f390e9e6b, type: 3}
   m_Name: 1_2_2
   m_EditorClassIdentifier: 
-  Mission_Name: "\uBCD1\uC6D0 \uC18C\uB3D9"
+  Mission_Name: "\uC2DC \uBCD1\uC6D0 \uC18C\uB3D9"
+  Mission_Area: 
   Reward_DOM: -13
   Reward_Reputation: 17
   Reward_Money: 0
@@ -19,3 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7cc0623e26e224044b02647bbb9cb975, type: 2}
   - {fileID: 11400000, guid: 1f07083525b42499eb25ad6a0cc67f4a, type: 2}
   - {fileID: 11400000, guid: 02e9f145491b84e87a87265196906c55, type: 2}
+  is_initialized: 0
+  NPC: {fileID: 0}
+  is_core_mission: 0
